@@ -20,6 +20,7 @@
 		A7808EFE1FAE8DF100DDDC54 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7808EFD1FAE8DF100DDDC54 /* FancyField.swift */; };
 		A7808F001FAE936900DDDC54 /* FancyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7808EFF1FAE936900DDDC54 /* FancyBtn.swift */; };
 		A7808F021FAE9BC700DDDC54 /* FancyFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7808F011FAE9BC700DDDC54 /* FancyFooter.swift */; };
+		A7808F041FAEA2BA00DDDC54 /* FancyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7808F031FAEA2BA00DDDC54 /* FancyLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A7808EFD1FAE8DF100DDDC54 /* FancyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		A7808EFF1FAE936900DDDC54 /* FancyBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyBtn.swift; sourceTree = "<group>"; };
 		A7808F011FAE9BC700DDDC54 /* FancyFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyFooter.swift; sourceTree = "<group>"; };
+		A7808F031FAEA2BA00DDDC54 /* FancyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyLabel.swift; sourceTree = "<group>"; };
 		C0F162CA5A777646B666E5D4 /* Pods_Social_Media.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_Media.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C2E41DED126FD4E4DE9D2E /* Pods-Social-Media.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social-Media.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social-Media/Pods-Social-Media.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 				A7808EFD1FAE8DF100DDDC54 /* FancyField.swift */,
 				A7808EFF1FAE936900DDDC54 /* FancyBtn.swift */,
 				A7808F011FAE9BC700DDDC54 /* FancyFooter.swift */,
+				A7808F031FAEA2BA00DDDC54 /* FancyLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				A7808EFC1FAE888D00DDDC54 /* RoundBtn.swift in Sources */,
 				A722C8291FADE9890033241B /* AppDelegate.swift in Sources */,
 				A7808F021FAE9BC700DDDC54 /* FancyFooter.swift in Sources */,
+				A7808F041FAEA2BA00DDDC54 /* FancyLabel.swift in Sources */,
 				A7808EF71FAE777600DDDC54 /* FancView.swift in Sources */,
 				A7808EFA1FAE7E5500DDDC54 /* Constants.swift in Sources */,
 				A7808F001FAE936900DDDC54 /* FancyBtn.swift in Sources */,
