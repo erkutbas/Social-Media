@@ -75,11 +75,9 @@ class SignInVC: UIViewController {
                 print("Erkut: User is successfully authenticated")
                 
             }
-            
         }
-        
     }
-    
+
 }
 
 
