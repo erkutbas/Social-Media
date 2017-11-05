@@ -10,15 +10,33 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
 
     @IBOutlet var emailTextField: FancyField!
     @IBOutlet var passwordTextField: FancyField!
     
+    // COK ÖNEMLİ
+    // viewDidLoad can not perform segues
+    // yani viewDidLoad fonksiyonu ekranlar arasındaki geçisi yapamaz
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additi onal setup after loading the view, typically from a nib.
+
+    }
+    
+    // uygulamayı silsen bile keychain sayesinde adam login ise gene sisteme giriş yapabiliyor :)
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_USER_ID) {
+            
+            print("Erkut : goToFeed view")
+            self.performSegue(withIdentifier: "goToFeed", sender: self)
+            
+        } else {
+            
+            print("Erkut : Something goes wrong")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +95,11 @@ class SignInVC: UIViewController {
                 
                 print("Erkut: User is successfully authenticated")
                 
+                if let userObject = user {
+                    
+                    self.completeSignIn(input_userid: userObject.uid)
+                    
+                }
             }
         }
     }
@@ -90,7 +113,13 @@ class SignInVC: UIViewController {
                 if error == nil {
                     
                     print("Erkut: email user authenticated with firebase")
-                    print("info verified or not : \(user?.isEmailVerified)")
+                    print("info verified or not : \(String(describing: user?.isEmailVerified))")
+                    
+                    if let userObject = user {
+                        
+                        self.completeSignIn(input_userid: userObject.uid)
+                        
+                    }
                     
                 } else {
                     
@@ -107,16 +136,25 @@ class SignInVC: UIViewController {
                         } else {
                             
                             print("Erkut : user email authentication is ok")
+                            
+                            if let userObject = user {
+                                
+                                self.completeSignIn(input_userid: userObject.uid)
+                                
+                            }
                         }
-                        
                     })
                 }
-                
             })
-            
         }
+    }
+    
+    func completeSignIn(input_userid: String) {
         
-        
+        let keychainResult = KeychainWrapper.standard.set(input_userid, forKey: KEY_USER_ID)
+        print("Erkut : data sadved to keychain : \(keychainResult)")
+        self.performSegue(withIdentifier: "goToFeed", sender: self)
+
     }
 }
 
