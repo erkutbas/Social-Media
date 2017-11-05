@@ -33,6 +33,7 @@
 		A722C8321FADE9890033241B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A722C8341FADE9890033241B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A722C83A1FADE9CD0033241B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A74CC8711FAF7E46006B51F9 /* Social-Media.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Social-Media.entitlements"; sourceTree = "<group>"; };
 		A7808EF61FAE777600DDDC54 /* FancView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancView.swift; sourceTree = "<group>"; };
 		A7808EF91FAE7E5500DDDC54 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7808EFB1FAE888D00DDDC54 /* RoundBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 		A722C8271FADE9890033241B /* Social-Media */ = {
 			isa = PBXGroup;
 			children = (
+				A74CC8711FAF7E46006B51F9 /* Social-Media.entitlements */,
 				A7808EF81FAE7E4600DDDC54 /* Utils */,
 				A722C83C1FADFC370033241B /* Model */,
 				A722C83D1FADFC420033241B /* View */,
@@ -180,6 +182,11 @@
 					A722C8241FADE9890033241B = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -256,6 +263,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Social-Media/Pods-Social-Media-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -263,6 +273,9 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -426,6 +439,7 @@
 			baseConfigurationReference = F8C2E41DED126FD4E4DE9D2E /* Pods-Social-Media.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Social-Media/Social-Media.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZVL2SV8VV7;
 				INFOPLIST_FILE = "Social-Media/Info.plist";
@@ -442,6 +456,7 @@
 			baseConfigurationReference = 3E41B0AA69B5403596001D70 /* Pods-Social-Media.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Social-Media/Social-Media.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZVL2SV8VV7;
 				INFOPLIST_FILE = "Social-Media/Info.plist";
