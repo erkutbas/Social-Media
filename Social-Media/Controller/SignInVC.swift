@@ -13,6 +13,9 @@ import FBSDKCoreKit
 
 class SignInVC: UIViewController {
 
+    @IBOutlet var emailTextField: FancyField!
+    @IBOutlet var passwordTextField: FancyField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additi onal setup after loading the view, typically from a nib.
@@ -78,6 +81,43 @@ class SignInVC: UIViewController {
         }
     }
 
+    @IBAction func signInTapped(_ sender: Any) {
+        
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                
+                if error == nil {
+                    
+                    print("Erkut: email user authenticated with firebase")
+                    print("info verified or not : \(user?.isEmailVerified)")
+                    
+                } else {
+                    
+                    Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                        
+                        if error != nil {
+                            
+                            if let errorMessage = error as NSError? {
+                                
+                                print("Erkut: createUser errorMessage :\(errorMessage)")
+                                
+                            }
+                            
+                        } else {
+                            
+                            print("Erkut : user email authentication is ok")
+                        }
+                        
+                    })
+                }
+                
+            })
+            
+        }
+        
+        
+    }
 }
 
 
