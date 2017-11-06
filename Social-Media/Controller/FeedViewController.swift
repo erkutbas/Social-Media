@@ -33,6 +33,8 @@ class FeedViewController: UIViewController {
         
         try! Auth.auth().signOut()
         
+        print("Remzi Demo")
+        
         performSegue(withIdentifier: "goToSignIn", sender: self)
     }
 
