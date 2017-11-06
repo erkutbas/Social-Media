@@ -56,7 +56,7 @@ class SignInVC: UIViewController {
                 
                 if let errorMessage = error as NSError? {
                     
-                    print("Erkut: errorMessage : \(errorMessage)")
+                    print("Erkut: errorMessage : \(errorMessage.code)")
                     
                 }
                 
